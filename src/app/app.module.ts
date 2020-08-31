@@ -10,6 +10,7 @@ import { metaReducers, reducers } from './index';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterSerializer } from './router-serializer';
 import { RouterEffects } from './store/effects/router.effect';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,8 @@ import { RouterEffects } from './store/effects/router.effect';
         EffectsModule.forRoot([RouterEffects]),
         StoreModule.forRoot(reducers, { metaReducers }),
         StoreRouterConnectingModule.forRoot({ serializer: RouterSerializer }),
+
+        GraphQLModule
     ],
     providers: [],
     bootstrap: [AppComponent]
