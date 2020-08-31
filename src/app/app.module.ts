@@ -11,6 +11,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { RouterSerializer } from './router-serializer';
 import { RouterEffects } from './store/effects/router.effect';
 import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -24,8 +25,8 @@ import { GraphQLModule } from './graphql.module';
         EffectsModule.forRoot([RouterEffects]),
         StoreModule.forRoot(reducers, { metaReducers }),
         StoreRouterConnectingModule.forRoot({ serializer: RouterSerializer }),
-
-        GraphQLModule
+        GraphQLModule,
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
