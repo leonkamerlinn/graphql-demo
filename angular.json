@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-starter-material-graphql-ngrx-store"
+    }
+  },
+  "defaultProject": "angular-starter-material-graphql-ngrx-store",
+  "cli": {
+    "analytics": "2315d045-dfa2-4f31-b106-586910e98c68"
+  }
 }
