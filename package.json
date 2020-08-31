@@ -9,7 +9,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "generate:introspect-schema": "apollo-codegen introspect-schema http://localhost:5001/tensecondsstaging/europe-west1/api/graphql --output src/generated/schema.json",
+        "generate:introspect-schema": "apollo-codegen introspect-schema http://localhost:8080/graphql --output src/generated/schema.graphql",
         "generate:types": "apollo-codegen generate src/**/*.ts --schema src/generated/schema.json --target typescript --output src/generated/operation-result-types.ts",
         "dev:ssr": "ng run angular-starter-material-graphql-ngrx-store:serve-ssr",
         "serve:ssr": "node dist/angular-starter-material-graphql-ngrx-store/server/main.js",
