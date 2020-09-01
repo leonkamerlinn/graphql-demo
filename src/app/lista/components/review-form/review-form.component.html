@@ -1,0 +1,35 @@
+<form [formGroup]="form" style="max-width: 400px;" (ngSubmit)="onSubmit(form.value)">
+    <mat-card>
+        <mat-card-content>
+
+            <div fxLayout="column">
+                <mat-form-field>
+                    <mat-label>Stars</mat-label>
+                    <input matInput placeholder="Stars" type="number" [max]="5" [min]="1" [formControl]="stars">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Commentary</mat-label>
+                    <input matInput placeholder="Commentary" [formControl]="commentary">
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <mat-label>Episode</mat-label>
+                    <mat-select [formControl]="episodeControl">
+                        <mat-option *ngFor="let episode of episodes"
+                                    [value]="episode">{{ episode }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+
+        </mat-card-content>
+        <button mat-button cdkFocusInitial (click)="onSubmit(form.value)"
+                [disabled]="form.invalid">{{index > -1 ? 'Update' : 'Create'}}
+        </button>
+
+    </mat-card>
+</form>
+

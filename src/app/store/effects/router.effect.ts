@@ -7,7 +7,6 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 
 import { map, tap } from 'rxjs/operators';
 import { Back, Forward, Go, RouterActionTypes } from '../actions/router.action';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Injectable()

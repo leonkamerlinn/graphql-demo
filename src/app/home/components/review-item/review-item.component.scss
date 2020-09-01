@@ -1,0 +1,36 @@
+
+
+:host {
+    display: inline-block;
+}
+
+section {
+    float: right;
+    .circle {
+        min-width: 100px;
+        min-height: 100px;
+        background: white;
+        border-radius: 50%
+    }
+    #text {
+        word-wrap: break-word;
+        .right {
+            text-align: right;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    }
+}
+
+
+
+
+
+

@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { selectReviewsCount } from './app.selectors';
+import { Observable } from 'rxjs';
+import { FetchAllReviews } from './store/actions/reviews.actions';
 
 @Component({
     selector: 'app-root',
@@ -6,8 +10,11 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'angular-starter-material-graphql-ngrx-store';
 
-    constructor() {
+    count$: Observable<number>;
+
+    constructor(private store: Store) {
+        this.store.dispatch(new FetchAllReviews());
+        this.count$ = this.store.select(selectReviewsCount);
     }
 }

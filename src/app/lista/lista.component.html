@@ -1,0 +1,20 @@
+<div fxLayoutAlign="center center">
+    <mat-form-field appearance="outline" style="background-color: white">
+        <mat-label>Episode</mat-label>
+        <mat-select value="ALL" (selectionChange)="episodeChange($event)">
+            <mat-option value="ALL">All</mat-option>
+            <mat-option value="NEWHOPE">Newhope</mat-option>
+            <mat-option value="EMPIRE">Empire</mat-option>
+            <mat-option value="JEDI">Jedi</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="createOrUpdate(-1)">Create new review</button>
+</div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let review of reviews$ | async; let i = index"
+         cdkDrag><b>Stars: </b>{{review.stars}} <br/> <b>Episode: </b>{{review.episode}} <br /> <b>Commenntary: </b>{{review.commentary}}
+        <app-delete-button (delete)="onDelete(i)"></app-delete-button>
+        <button mat-button (click)="createOrUpdate(i, review)">Update</button>
+    </div>
+</div>
